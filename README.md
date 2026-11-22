@@ -44,4 +44,5 @@ DrakeModsLibs (tag gates, config sync, item display; the UI, Forge, Compat and I
 
 ## Known gaps
 
-Not built or run since it was assembled; no dotnet SDK was available. Build once after creating a mod from it.
+Compile-checked (Roslyn on mono, against the Valheim 1.0 reference assemblies from NuGet) with every module added, but never run in game.
+The PowerShell scripts are untested. Build once after creating a mod from it.
