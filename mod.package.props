@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <ThunderstoreName>DrakesModStub</ThunderstoreName>
+    <ThunderstoreAuthor>DrakeMods</ThunderstoreAuthor>
+    <RootNamespace>DrakesModStub</RootNamespace>
+    <AssemblyName>DrakesModStub</AssemblyName>
+    <Version>0.1.0</Version>
+    <BepInPluginName>DrakesModStub</BepInPluginName>
+    <BepInGuid>com.drakemods.modstub</BepInGuid>
+    <ModInfoClass>DrakesModStub</ModInfoClass>
+    <Description>Template mod. Replace this sentence.</Description>
+    <WebsiteUrl>https://github.com/drakethos/DrakesModStub</WebsiteUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <ThunderstoreDependency Include="denikson-BepInExPack_Valheim-5.4.2350" />
+    <ThunderstoreDependency Include="ValheimModding-Jotunn-2.30.0" />
+  </ItemGroup>
+</Project>
