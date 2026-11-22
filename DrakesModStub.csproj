@@ -73,6 +73,14 @@
     <Compile Include="Defense\ModGuard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <!-- Optional UI: move modules\Ui to Ui\ (see README) and these references and sources are picked up. -->
+  <ItemGroup Condition="Exists('Ui')">
+    <Compile Include="Ui\**\*.cs" />
+    <Reference Include="UnityEngine.UI"><HintPath>$(CorlibPath)\UnityEngine.UI.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.UIElementsModule"><HintPath>$(CorlibPath)\UnityEngine.UIElementsModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule"><HintPath>$(CorlibPath)\UnityEngine.TextCoreTextEngineModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule"><HintPath>$(CorlibPath)\UnityEngine.TextCoreFontEngineModule.dll</HintPath></Reference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
