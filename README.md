@@ -31,22 +31,15 @@ The script deletes itself and its copy of this section. It does not commit anyth
 Copy `environment.props.example` (Windows) or `environment.props.example.linux` to `environment.props` (gitignored) and
 fix the paths.
 
-## Optional UI (no Libs needed)
+## Optional modules (no Libs needed)
 
-`modules/Ui` is the DrakeMods UI (wood action menu, confirm and text prompts, sliders, steppers, message stack, tab host,
-and the UI Toolkit look) lifted out of DrakeModsLibs and cut loose: same code under this mod's own namespace
-(`<YourMod>.Ui`), with the Libs settings replaced by a small `UiSettings` class. To use it:
-
-1. `mv modules/Ui Ui` (the csproj picks up `Ui\**\*.cs` and the extra Unity references when that folder exists).
-2. In `Awake`, call `Ui.UiSettings.Bind(Config);` (adds the per-client `UseToolkitUi` setting).
-3. Delete the `modules` folder if you want.
-
-Each mod that uses it carries its own copy, so two mods never share UI state. It is a copy, not a dependency: fixes made in
-DrakeModsLibs do not reach it, and vice versa. Not compiled or run in-game since the split.
+`modules/` holds UI, Forge, Compat and Input, lifted out of DrakeModsLibs and cut loose under your mod's own namespace.
+`./add-module.sh Ui Forge` (Windows `.\Add-Module.ps1 Ui,Forge`) turns them on; see `modules/README.md`.
+The UI needs `Ui.UiSettings.Bind(Config);` in `Awake`.
 
 ## Not included on purpose
 
-DrakeModsLibs (tag gates, config sync, item display; the UI is available above without it). If a mod needs them, add the Libs reference then (see LockSmith's
+DrakeModsLibs (tag gates, config sync, item display; the UI, Forge, Compat and Input are available above without it). If a mod needs them, add the Libs reference then (see LockSmith's
 `Directory.Build.props`) and remove `<EmbedServerSync>` from this repo's `Directory.Build.props`.
 
 ## Known gaps

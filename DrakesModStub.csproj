@@ -73,13 +73,24 @@
     <Compile Include="Defense\ModGuard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <!-- Optional UI: move modules\Ui to Ui\ (see README) and these references and sources are picked up. -->
+  <!-- Optional modules: ./add-module.sh Ui Forge ... moves modules\<Name> to <Name>\ and these pick them up. -->
   <ItemGroup Condition="Exists('Ui')">
     <Compile Include="Ui\**\*.cs" />
     <Reference Include="UnityEngine.UI"><HintPath>$(CorlibPath)\UnityEngine.UI.dll</HintPath></Reference>
     <Reference Include="UnityEngine.UIElementsModule"><HintPath>$(CorlibPath)\UnityEngine.UIElementsModule.dll</HintPath></Reference>
     <Reference Include="UnityEngine.TextCoreTextEngineModule"><HintPath>$(CorlibPath)\UnityEngine.TextCoreTextEngineModule.dll</HintPath></Reference>
     <Reference Include="UnityEngine.TextCoreFontEngineModule"><HintPath>$(CorlibPath)\UnityEngine.TextCoreFontEngineModule.dll</HintPath></Reference>
+  </ItemGroup>
+  <ItemGroup Condition="Exists('Forge')">
+    <Compile Include="Forge\**\*.cs" />
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(CorlibPath)\UnityEngine.ImageConversionModule.dll</HintPath></Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule"><HintPath>$(CorlibPath)\UnityEngine.ParticleSystemModule.dll</HintPath></Reference>
+  </ItemGroup>
+  <ItemGroup Condition="Exists('Compat')">
+    <Compile Include="Compat\**\*.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="Exists('Input')">
+    <Compile Include="Input\**\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
